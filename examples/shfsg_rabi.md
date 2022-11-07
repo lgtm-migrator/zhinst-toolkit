@@ -14,7 +14,7 @@ jupyter:
 ---
 
 # Generate a Rabi Sequence
-
+Generate the sequence of pulses needed in a Rabi experiment using the SHFSG.
 
 Requirements:
 
@@ -29,7 +29,7 @@ session = Session("localhost")
 device = session.connect_device("DEVXXXX")
 ```
 
-### Rabi Sequence parameter configuration
+### Configure parameters of the Rabi Sequence
 
 ```python
 CHANNEL = 0
@@ -115,6 +115,7 @@ device.sgchannels[0].awg.load_sequencer_program(SEQUENCER_CODE)
 ```
 
 ### Create and upload command table
+Create a command table that increments the amplitude of the Rabi pulse.
 
 ```python
 from zhinst.toolkit import CommandTable

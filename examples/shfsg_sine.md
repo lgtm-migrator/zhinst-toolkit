@@ -13,7 +13,8 @@ jupyter:
     name: python3
 ---
 
-# Generate a sine wave
+# Generate a sine wave with the SHFSG
+Generate a sinusoidal signal at a single frequency using the sine generator functionality of the SHFSG.
 
 Requirements:
 
@@ -28,6 +29,7 @@ session = Session("localhost")
 device = session.connect_device("DEVXXXX")
 ```
 
+The sine generation in the SHFSG allows to produce a sinusoidal wave at frequencies up to 8.5 GHz. To do so it firstly uses a digital sine generator which works al low frequencies, and then operates frequency upconversion to bring the frequency in the RF domain.
 ### Configure center frequency and RF output
 
 ```python

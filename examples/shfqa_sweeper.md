@@ -33,11 +33,11 @@ CHANNEL = 0
 ```
 
 For now the general sweeper module does not support the SHFQA. However a
-python based implementation called ``SHFSweeper`` does already provide
+python-based implementation called ``SHFSweeper`` does already provide
 this functionality. The ``SHFSweeper`` is part of the ``zhinst`` module
 and can be found in the utils.
 
-Toolkit wraps around the ``SHFSweeper`` and exposes a interface that is
+Toolkit wraps around the ``SHFSweeper`` and exposes an interface that is
 similar to the LabOne modules, meaning the parameters are exposed in a
 node tree like structure.
 
@@ -54,12 +54,13 @@ The underlying module is updated with the parameter changes automatically.
 Every functions from the underlying SHFSweeper module is exposed and can be
 used in the same way.
 
+In this example we show how to perform continuous and pulsed resonator spectroscopy in toolkit with the sweeper module.
 
-## Run a frequency sweep
+## Continuous resonator spectroscopy
+In continuous spectroscopy the resonator is probed with a continuous wave. 
 ### Configure the sweeper
-
-(Besides the measurement specific parameters the device that the sweeper will use
-must be specified as well.)
+Configure the sequencer by specifying the frequencies to be swept, the averaging settings and the input and output ranges.
+Moreover, the toolkit sweeper module requires to specify the device it will use as well.
 
 ```python
 sweeper.device(device)
@@ -103,8 +104,8 @@ print(f"Measured at {num_points_result} frequency points.")
 sweeper.plot()
 ```
 
-## Pulsed resonator with complex envelope
-
+## Pulsed resonator spectroscopy
+In pulsed spectroscopy the resonator is probed with a signal consisting of an envelope modulated at the sweeping frequency.
 ### Create the envelope
 
 ```python
